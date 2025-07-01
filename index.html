@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Универсальная база данных</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1 id="app-title">Универсальная база данных</h1>
+            <div class="menu">
+                <button id="btn-show-all">Показать все записи</button>
+                <button id="btn-add-new">Добавить новую запись</button>
+                <button id="btn-import">Импорт данных</button>
+                <button id="btn-export">Экспорт данных</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="search-panel">
+                <input type="text" id="search-input" placeholder="Поиск...">
+                <select id="search-field">
+                    <!-- Опции будут добавлены динамически -->
+                </select>
+                <button id="btn-search">Найти</button>
+                <button id="btn-clear-search">Очистить</button>
+            </div>
+
+            <div class="content">
+                <div class="list-container">
+                    <h2>Список записей</h2>
+                    <div id="records-list" class="records-list">
+                        <!-- Список записей будет здесь -->
+                    </div>
+                </div>
+
+                <div class="form-container hidden" id="form-container">
+                    <h2 id="form-title">Добавить новую запись</h2>
+                    <form id="record-form">
+                        <!-- Форма будет создана динамически -->
+                        <div class="form-buttons">
+                            <button type="submit" id="btn-submit">Сохранить</button>
+                            <button type="button" id="btn-cancel">Отмена</button>
+                            <button type="button" id="btn-delete" class="hidden">Удалить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <div id="modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="modal-message"></p>
+                <button id="modal-confirm">OK</button>
+            </div>
+        </div>
+
+        <input type="file" id="file-input" class="hidden" accept=".json">
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
